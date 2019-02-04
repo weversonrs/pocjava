@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html 
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+	<title>Sistema de Doação</title>	
+
+    </h:head>
+	<body style="min-height: 100%;">
+	
+		<b:navBar brand="SIDS - Sistema Integrado de Doação de Sangue" brandHref="#" inverse="true" >
+            <b:navbarLinks>
+                
+            </b:navbarLinks>
+            
+        </b:navBar>
+        <b:container>
+     	<h:form>
+     		<b:panel>
+     			<b:column span="12">
+	  				<h3>Seja bem vindo. Entre com os dados abaixo para realizar o login.</h3>
+  				</b:column>
+  				
+  				<b:inputText placeholder="Username" required="true" label="Usuário:"
+					colMd="10" labelColMd="2" name="username" id="username">
+					<f:facet name="prepend">
+						<b:icon name="user" />
+					</f:facet>
+				</b:inputText>
+		
+				<b:inputSecret placeholder="Password" label="Senha: " colMd="10"
+					labelColMd="2" id="password" name="password">
+					<f:facet name="prepend">
+						<b:iconAwesome name="key" />
+					</f:facet>
+				</b:inputSecret>
+				
+				<h:commandLink action="cadastrar" value="Não possuo cadastro." />
+				<h:commandButton value="Voltar" action="voltar" />
+				<h:commandButton value="Enviar" action="login" />
+  				
+     		</b:panel>
+    		 	
+		</h:form>   
+	</b:container>
+	
+	</body>
+</html>

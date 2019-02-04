@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:sec="http://www.springframework.org/security/tags"> 
+	<h:head>
+        <title>Sistema de Doação</title>
+        <meta name="weverson" content="The Author"></meta>
+    </h:head>
+    <!-- Add 50px padding top to the body for the navbar -->
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+    	
+    	<h:form>
+    	
+        <b:navBar brand="SIDS - Sistema Integrado de Doação de Sangue" brandHref="#" inverse="true" fixed="top">
+            <b:navbarLinks>
+                <b:navLink value="Link" href="#"></b:navLink>
+                <b:navLink value="Link" href="#"></b:navLink>
+                <b:dropMenu value="Dropdown" rendered="${requestScope.role == 'user'}">
+                	<b:navLink value="Agendar doação de sangue" href="#"></b:navLink>
+                	<b:navLink value="Visualizar resultado de exames" href="#"></b:navLink>
+                    <b:navLink value="Analisar atendimento" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Dados cadastrais"></b:navLink>
+                    <b:navLink value="Atualizar" href="#"></b:navLink>
+                </b:dropMenu>
+                <b:dropMenu value="Dropdown" rendered="${requestScope.role == 'admin'}">
+                	<b:navLink value="Solicitar bolsa de sangue" action="solicitarSangue"></b:navLink>
+                	<b:navLink></b:navLink>
+                    <b:navLink header="Dados cadastrais"></b:navLink>
+                    <b:navLink value="Atualizar" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            
+        </b:navBar>
+       
+       </h:form>
+        <p/>
+        <b:container>
+			<b:row>
+			
+				
+				
+				<h:outputText value="${requestScope.role}" />
+				
+				
+				
+			</b:row>
+		<hr/>
+     	<footer>
+            <p>© Sistema de Doação - 2019</p>
+        </footer>
+        </b:container>
+
+    </h:body>  
+</html>
